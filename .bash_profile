@@ -19,12 +19,16 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 
-# Setting PATH for Python 2.7
+
+# Setting PATH for Python 3.7
 # The original version is saved in .bash_profile.pysave
-export GOPATH=$HOME/go 
-export GOBIN=$HOME/go/bin 
-#export PATH=$PATH:$GOBIN
-PATH="$GOPATH/bin:/usr/local/go/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 export PATH
-#source ~/git-subrepo/.rc
-export BOKKEN_TEAM=asset-pipeline
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && .  "/usr/local/etc/profile.d/bash_completion.sh"
+test -f ~/.git-completion.bash && . $_
+alias python=python3
+alias pip=pip3
+
+alias ctags='/usr/local/bin/ctags'
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
